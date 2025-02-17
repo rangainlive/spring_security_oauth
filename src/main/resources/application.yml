@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring_security_oauth  # Sets the application name (useful for logs, service discovery, etc.)
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pi_db  # PostgreSQL database connection URL
+    username: admin  # Database username
+    password: pass  # Database password (keep it secure using environment variables in production)
+    driver-class-name: org.postgresql.Driver  # PostgreSQL JDBC Driver
+  jpa:
+    hibernate:
+      ddl-auto: update  # Automatically updates the database schema based on Entity changes
+    show-sql: true  # Enables SQL statement logging in the console
+    properties:
+      hibernate:
+        format_sql: true  # Formats SQL output for better readability
+    database: postgresql  # Specifies the database type
+    database-platform: org.hibernate.dialect.PostgreSQLDialect  # Hibernate dialect for PostgreSQL
