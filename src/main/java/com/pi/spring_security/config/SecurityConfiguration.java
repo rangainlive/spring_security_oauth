@@ -31,7 +31,7 @@ public class SecurityConfiguration {
             .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Enable CORS configuration
             .csrf(AbstractHttpConfigurer::disable) // Disable CSRF for stateless authentication
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/home", "/auth/**", "/login", "/register").permitAll() // Public Endpoints
+                .requestMatchers("/api/v1/auth/**").permitAll() // Public Endpoints
                 .anyRequest().authenticated() // All other endpoints require authentication
             )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Set session policy to stateless
