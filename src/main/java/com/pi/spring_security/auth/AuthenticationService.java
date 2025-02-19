@@ -11,9 +11,11 @@ import com.pi.spring_security.user.UserRepository;
 import com.pi.spring_security.utils.JwtService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class AuthenticationService {
 	
 	private final UserRepository respository;
@@ -25,7 +27,7 @@ public class AuthenticationService {
 	private final AuthenticationManager authenticationManager;
 	
 	public AuthenticationResponse register(RegisterRequest request) {
-		
+		log.info("Request: "+request.getFirstname());
 		var user = User.builder()
 				.firstname(request.getFirstname())
 				.lastname(request.getLastname())
